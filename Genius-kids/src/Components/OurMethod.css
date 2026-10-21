@@ -1,0 +1,312 @@
+.method-heading {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.method-heading h1 {
+  margin: 0;
+  color: #354d82;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.method-heading h1 span {
+  color: #c25780;
+}
+
+.method-heading-line {
+  width: 60px;
+  height: 4px;
+  background: #e78caf;
+  border-radius: 5px;
+  margin: 12px auto 0;
+}
+
+.method-heading > p {
+  margin: 70px 0 0;
+  color: #777;
+  font-size: 21px;
+  line-height: 1.7;
+}
+
+
+.dynamic-method-section {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 105px 11.3% 70px;
+  background: #f5f2ea;
+}
+
+.dynamic-method-section .method-heading {
+  margin-bottom: 40px;
+}
+
+.age-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 902px;
+  margin: 0 auto 96px;
+}
+
+.age-box {
+  min-height: 176px;
+  box-sizing: border-box;
+  padding: 30px 20px;
+  background: #fff;
+  border: 1px solid #efdfd4;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.age-box h2 {
+  margin: 0 0 24px;
+  color: #354d82;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.age-box p {
+  margin: 0;
+  color: #c25780;
+  font-size: 18px;
+}
+
+.dynamic-method-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.dynamic-method-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #efdfd4;
+  border-radius: 20px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.dynamic-method-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.dynamic-method-image {
+  width: 100%;
+  height: 238px;
+  overflow: hidden;
+}
+
+.dynamic-method-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dynamic-method-content {
+  padding: 24px 23px 28px;
+}
+
+.dynamic-method-content h3 {
+  margin: 0 0 28px;
+  color: #203f7d;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.dynamic-method-content p {
+  margin: 0;
+  color: #777;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.learning-corner-section {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 38px 11.3% 70px;
+  background: #fffaf5;
+}
+
+.learning-corner-section .method-heading {
+  margin-bottom: 70px;
+}
+
+.learning-corner-section .method-heading-line {
+  margin-top: 12px;
+}
+
+.corner-method-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.corner-method-card {
+  min-width: 0;
+  min-height: 220px;
+  box-sizing: border-box;
+  padding: 27px 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #fff;
+  border: 1px solid #efdfd4;
+  border-radius: 20px;
+  text-align: center;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.corner-method-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(194, 87, 128, 0.12);
+}
+
+.corner-method-icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fce1eb;
+  border-radius: 17px;
+  color: #c25780;
+  font-size: 23px;
+
+  margin-bottom: 20px;
+}
+
+.corner-method-card h3 {
+  margin: 0;
+  color: #203f7d;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+
+@media (max-width: 1024px) {
+  .dynamic-method-section,
+  .learning-corner-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .method-heading h1 {
+    font-size: 44px;
+  }
+
+  .dynamic-method-cards,
+  .corner-method-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .age-container {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dynamic-method-section {
+    padding: 60px 20px 45px;
+  }
+
+  .learning-corner-section {
+    padding: 50px 20px 45px;
+  }
+
+  .method-heading h1 {
+    font-size: 32px;
+  }
+
+  .method-heading > p {
+    margin-top: 35px;
+    font-size: 16px;
+  }
+
+  .dynamic-method-section .method-heading {
+    margin-bottom: 35px;
+  }
+
+  .age-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .age-box {
+    min-height: 150px;
+  }
+
+  .age-box h2 {
+    font-size: 24px;
+  }
+
+  .age-box p {
+    font-size: 16px;
+  }
+
+  .dynamic-method-cards,
+  .corner-method-cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .dynamic-method-image {
+    height: 240px;
+  }
+
+  .dynamic-method-content {
+    padding: 20px;
+  }
+
+  .dynamic-method-content h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .dynamic-method-content p {
+    font-size: 15px;
+  }
+
+  .corner-method-card {
+    min-height: 180px;
+  }
+
+  .learning-corner-section .method-heading {
+    margin-bottom: 40px;
+  }
+}
+
+
+#our-method {
+  scroll-margin-top: 100px;
+}
+
+#learning-corner {
+  scroll-margin-top: 100px;
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}

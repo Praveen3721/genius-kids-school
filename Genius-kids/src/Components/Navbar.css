@@ -1,0 +1,144 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #fffaf5;
+}
+
+
+.navbar-container {
+  width: 77%;
+  max-width: 1300px;
+  min-height: 84px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #354d82;
+  text-decoration: none;
+}
+
+.navbar-logo img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+.navbar-logo-text h2 {
+  margin: 0 0 5px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.navbar-logo-text span {
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  color: #77716c;
+}
+
+
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 10px 0;
+  color: #454545;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  font-style: italic;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #e78caf;
+  transition: width 0.3s ease;
+}
+
+.nav-link.active {
+  color: #c25780;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #c25780;
+}
+
+
+
+@media (max-width: 1024px) {
+  .navbar-container {
+    width: 90%;
+  }
+
+  .navbar-links {
+    gap: 18px;
+  }
+
+  .navbar-logo-text h2 {
+    font-size: 19px;
+  }
+
+  .navbar-logo-text span {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar-container {
+    width: 95%;
+    min-height: auto;
+    padding: 12px 0;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .navbar-logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .navbar-logo-text h2 {
+    font-size: 18px;
+  }
+
+  .navbar-links {
+    width: 100%;
+    gap: 22px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .nav-link {
+    flex-shrink: 0;
+    font-size: 13px;
+    padding: 8px 0;
+  }
+}
