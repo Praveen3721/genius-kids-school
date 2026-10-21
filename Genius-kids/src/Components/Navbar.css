@@ -1,22 +1,29 @@
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
   background: #fffaf5;
+  border-bottom: 1px solid #eee5dc;
 }
-
 
 .navbar-container {
   width: 77%;
   max-width: 1300px;
   min-height: 84px;
   margin: 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+/* =========================
+   LOGO
+========================= */
 
 .navbar-logo {
   display: flex;
@@ -24,6 +31,7 @@
   gap: 12px;
   color: #354d82;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .navbar-logo img {
@@ -44,7 +52,9 @@
   color: #77716c;
 }
 
-
+/* =========================
+   DESKTOP NAVIGATION
+========================= */
 
 .navbar-links {
   display: flex;
@@ -78,7 +88,6 @@
 
 .nav-link.active {
   color: #c25780;
-  font-weight: 600;
 }
 
 .nav-link.active::after {
@@ -89,7 +98,46 @@
   color: #c25780;
 }
 
+/* =========================
+   HAMBURGER BUTTON
+========================= */
 
+.navbar-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  padding: 5px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  background: #354d82;
+  border-radius: 5px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hamburger transforms into X */
+
+.navbar-toggle.open span:first-child {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.navbar-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.open span:last-child {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 1024px) {
   .navbar-container {
@@ -109,36 +157,125 @@
   }
 }
 
-@media (max-width: 700px) {
-  .navbar-container {
-    width: 95%;
-    min-height: auto;
-    padding: 12px 0;
+/* =========================
+   MOBILE NAVIGATION
+========================= */
 
-    flex-direction: column;
-    align-items: flex-start;
+@media (max-width: 700px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+  }
+
+  .navbar-container {
+    position: relative;
+    width: 100%;
+    min-height: 105px;
+    padding: 12px 22px;
+    box-sizing: border-box;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     gap: 12px;
   }
 
+  /* Logo on the left */
+
+  .navbar-logo {
+    gap: 12px;
+    min-width: 0;
+  }
+
   .navbar-logo img {
-    width: 42px;
-    height: 42px;
+    width: 65px;
+    height: 65px;
   }
 
   .navbar-logo-text h2 {
-    font-size: 18px;
-  }
-
-  .navbar-links {
-    width: 100%;
-    gap: 22px;
-    overflow-x: auto;
+    font-size: clamp(20px, 5vw, 27px);
+    margin: 0;
     white-space: nowrap;
   }
 
+  /* Hide school subtitle on mobile */
+
+  .navbar-logo-text span {
+    display: none;
+  }
+
+  /* Show hamburger on the right */
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  /* Dropdown menu */
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    padding: 12px 24px 20px;
+    box-sizing: border-box;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+
+    background: #fffaf5;
+    border-top: 1px solid #eee5dc;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Show when hamburger is clicked */
+
+  .navbar-links.show {
+    display: flex;
+  }
+
   .nav-link {
-    flex-shrink: 0;
-    font-size: 13px;
-    padding: 8px 0;
+    display: block;
+    width: fit-content;
+    padding: 12px 0;
+    font-size: 15px;
+    font-style: normal;
+  }
+
+  .nav-link::after {
+    bottom: 4px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+  .navbar-container {
+    min-height: 88px;
+    padding: 10px 14px;
+  }
+
+  .navbar-logo {
+    gap: 8px;
+  }
+
+  .navbar-logo img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .navbar-logo-text h2 {
+    font-size: 19px;
+  }
+
+  .navbar-toggle span {
+    width: 30px;
+    height: 5px;
+    margin: 5px 0;
   }
 }

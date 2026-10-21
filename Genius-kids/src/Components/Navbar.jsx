@@ -3,6 +3,7 @@ import "./Navbar.css";
 
 function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", id: "home" },
@@ -14,8 +15,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 150;
-
+      const scrollPosition = window.scrollY + 160;
       let currentSection = "home";
 
       navLinks.forEach((link) => {
@@ -26,7 +26,6 @@ function Navbar() {
         }
       });
 
-      // At the bottom of the page, activate Contact.
       if (
         window.innerHeight + window.scrollY >=
         document.documentElement.scrollHeight - 10
@@ -58,13 +57,11 @@ function Navbar() {
       return;
     }
 
-    // Immediately activate the clicked link.
     setActiveSection(id);
+    setMenuOpen(false);
 
-    // Update the URL hash.
     window.history.replaceState(null, "", `#${id}`);
 
-    // Scroll to the selected section.
     const navbarHeight =
       document.querySelector(".navbar")?.offsetHeight || 0;
 
@@ -94,8 +91,21 @@ function Navbar() {
           </div>
         </a>
 
+        {/* Mobile Hamburger Button */}
+        <button
+          type="button"
+          className={`navbar-toggle ${menuOpen ? "open" : ""}`}
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         {/* Navigation Links */}
-        <div className="navbar-links">
+        <div className={`navbar-links ${menuOpen ? "show" : ""}`}>
           {navLinks.map((link) => (
             <a
               key={link.id}
