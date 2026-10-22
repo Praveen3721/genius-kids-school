@@ -3,92 +3,150 @@ import "./Reviews.css";
 function Reviews() {
   const reviews = [
     {
-      name: "Kavi Kaashini",
-      text: "Selfless service oriented people are rare to see.",
+      initial: "K",
+      name: "Kavitha Raj",
+      location: "Parent of LKG Student",
+      text: "Euro Kids Pre-School provides a wonderful learning environment. My child enjoys going to school every day and loves the activities.",
     },
     {
-      name: "Kiruba Karan",
-      text: "The teachers are very kind, patient, and take good care of the children.",
+      initial: "R",
+      name: "Rajesh Kumar",
+      location: "Parent of UKG Student",
+      text: "The teachers are friendly, caring, and supportive. I am happy to see my child becoming more confident and independent.",
     },
     {
-      name: "Prema Puppy",
-      text: "The friendly staff and healthy environment make the school special.",
+      initial: "P",
+      name: "Priya Sharma",
+      location: "Parent of Nursery Student",
+      text: "A colourful and joyful school for little children. The activity-based learning helps my child learn new things every day.",
+    },
+    {
+      initial: "S",
+      name: "Suresh Babu",
+      location: "Parent of LKG Student",
+      text: "The school provides a welcoming environment for children. My child enjoys drawing, singing, and participating in classroom activities.",
+    },
+    {
+      initial: "M",
+      name: "Meena Lakshmi",
+      location: "Parent of UKG Student",
+      text: "I appreciate the attention given to every child. The teachers encourage creativity, communication, and good habits.",
+    },
+    {
+      initial: "A",
+      name: "Arun Prakash",
+      location: "Parent of Nursery Student",
+      text: "A nice place for early childhood learning. My child is excited about school activities and enjoys spending time with teachers and friends.",
     },
   ];
 
   return (
     <section className="reviews-section" id="reviews">
-
-      {/* Reviews Header */}
-      <div className="reviews-header">
-
-        <div className="reviews-title">
-          <p className="reviews-subtitle">
-            FAMILIES ON GOOGLE
-          </p>
-
-          <h2>
-            What <span>Parents Say</span>
-          </h2>
-
-          <p className="reviews-description">
-            Kind words from families who have experienced Genius Kids.
-          </p>
-        </div>
-
-        {/* Google Rating */}
-        <div className="google-rating">
-          <h2>
-            <span className="google-g">G</span> 5.0
-          </h2>
-
-          <div className="review-stars">★★★★★</div>
-
-          <p>From 84 Google reviews</p>
-
-          <a
-            href="https://www.google.com/search?q=Genius+Kids+International+School+reviews"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read all Google reviews ↗
-          </a>
-        </div>
-
-      </div>
-
-      {/* Review Cards */}
       <div className="reviews-container">
 
-        {reviews.map((review) => (
-          <article className="review-card" key={review.name}>
+    
+        <div className="reviews-header">
+          <div className="reviews-heading">
 
-            <div className="quote-icon">“</div>
-
-            <div className="review-stars">★★★★★</div>
-
-            <p className="review-text">
-              {review.text}
+            <p className="reviews-subtitle">
+              HAPPY PARENTS, HAPPY CHILDREN
             </p>
 
-            <div className="review-author">
+            <h2>
+              What Parents Say About{" "}
+              <span>Euro Kids</span>
+            </h2>
 
-              <div className="review-avatar">
-                {review.name.charAt(0)}
-              </div>
+            <p className="reviews-description">
+              Every little smile tells a story! Discover how our
+              caring environment and playful learning approach
+              help children learn, explore, and grow with confidence.
+            </p>
 
-              <div>
-                <h3>{review.name}</h3>
-                <span>Google review</span>
-              </div>
+          </div>
 
+          <div className="google-rating-card">
+
+            <div className="google-rating-title">
+              <span className="google-letter">G</span>
+
+              <span className="google-rating-number">
+                Parent Reviews
+              </span>
             </div>
 
-          </article>
-        ))}
+            <div className="google-stars">
+              ★★★★★
+            </div>
+
+            <p>
+              Read feedback from families about their preschool
+              experience.
+            </p>
+
+            <a
+              href="https://www.google.com/maps"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="google-review-link"
+            >
+              Find us on Google ↗
+            </a>
+
+          </div>
+        </div>
+
+        <div className="reviews-grid">
+
+          {reviews.map((review, index) => (
+            <article className="review-card" key={index}>
+
+              <div className="review-quote">
+                “
+              </div>
+
+              <div className="review-stars">
+                ★★★★★
+              </div>
+
+              <p className="review-text">
+                {review.text}
+              </p>
+
+              <div className="review-author">
+
+                <div className="review-avatar">
+                  {review.initial}
+                </div>
+
+                <div className="review-author-details">
+
+                  <h3>
+                    {review.name}
+                  </h3>
+
+                  <span>
+                    {review.location}
+                  </span>
+
+                </div>
+
+              </div>
+
+            </article>
+          ))}
+
+        </div>
+
+        <div className="reviews-footer">
+          <span className="footer-heart">♡</span>
+
+          <p>
+            Little Learners Today, Bright Futures Tomorrow!
+          </p>
+        </div>
 
       </div>
-
     </section>
   );
 }

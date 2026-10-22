@@ -15,7 +15,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 160;
+      const scrollPosition = window.scrollY + 180;
       let currentSection = "home";
 
       navLinks.forEach((link) => {
@@ -74,6 +74,30 @@ function Navbar() {
     });
   };
 
+  const handleEnrollClick = () => {
+    setMenuOpen(false);
+
+    const contactSection = document.getElementById("contact");
+
+    if (contactSection) {
+      setActiveSection("contact");
+
+      window.history.replaceState(null, "", "#contact");
+
+      const navbarHeight =
+        document.querySelector(".navbar")?.offsetHeight || 0;
+
+      const sectionTop =
+        contactSection.getBoundingClientRect().top +
+        window.scrollY;
+
+      window.scrollTo({
+        top: Math.max(0, sectionTop - navbarHeight),
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -83,21 +107,19 @@ function Navbar() {
           className="navbar-logo"
           onClick={(event) => handleNavClick(event, "home")}
         >
-          <img src="/images/logo.png" alt="Genius Kids Logo" />
-
-          <div className="navbar-logo-text">
-            <h2>Genius Kids</h2>
-            <span>INTERNATIONAL SCHOOL</span>
-          </div>
+          <img
+            src="/images/euroKids.png"
+            alt="Euro Kids Pre-School Logo"
+          />
         </a>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Menu Button */}
         <button
           type="button"
           className={`navbar-toggle ${menuOpen ? "open" : ""}`}
-          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
-          aria-expanded={menuOpen}
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
         >
           <span></span>
           <span></span>
@@ -105,21 +127,27 @@ function Navbar() {
         </button>
 
         {/* Navigation Links */}
-        <div className={`navbar-links ${menuOpen ? "show" : ""}`}>
-          {navLinks.map((link) => (
-            <a
-              key={link.id}
-              href={`#${link.id}`}
-              onClick={(event) => handleNavClick(event, link.id)}
-              className={
-                activeSection === link.id
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              {link.name}
-            </a>
-          ))}
+        <div className={`navbar-right ${menuOpen ? "show" : ""}`}>
+          <div className="navbar-links">
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                onClick={(event) =>
+                  handleNavClick(event, link.id)
+                }
+                className={
+                  activeSection === link.id
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+
+          
         </div>
       </div>
     </nav>

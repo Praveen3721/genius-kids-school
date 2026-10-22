@@ -1,34 +1,5 @@
 import "./Contact.css";
 
-const contactDetails = [
-  {
-    icon: "📍",
-    title: "Our Location",
-    text: (
-      <>
-        2/541 C, Ambal Nagar, Malumichampatti,
-        <br />
-        Coimbatore, Tamil Nadu, India - 641 050
-      </>
-    ),
-  },
-  {
-    icon: "📞",
-    title: "Call Us",
-    text: "+91 94448 28105",
-  },
-  {
-    icon: "✉",
-    title: "Email Us",
-    text: "geniuskidsscl@gmail.com",
-  },
-  {
-    icon: "◷",
-    title: "Working Hours",
-    text: "Monday - Friday: 8:00 AM - 4:30 PM",
-  },
-];
-
 function Contact() {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -40,18 +11,22 @@ function Contact() {
     const phone = formData.get("phone");
     const message = formData.get("message");
 
-    const subject = encodeURIComponent(`Website enquiry from ${name}`);
+    const schoolEmail = "geniuskidsscl@gmail.com";
+
+    const subject = encodeURIComponent(`School Enquiry from ${name}`);
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
     );
 
     window.location.href =
-      `mailto:geniuskidsscl@gmail.com?subject=${subject}&body=${body}`;
+      `mailto:${schoolEmail}?subject=${subject}&body=${body}`;
   };
 
   return (
     <section className="contact-section" id="contact">
       <div className="contact-container">
+
+        {/* Heading */}
         <div className="contact-heading">
           <h1>
             Get in <span>Touch</span>
@@ -59,28 +34,64 @@ function Contact() {
           <div className="contact-heading-line"></div>
         </div>
 
+        {/* Contact Details and Form */}
         <div className="contact-content">
-          {/* Contact Information */}
-          <div className="contact-information">
-            {contactDetails.map((item) => (
-              <div className="contact-item" key={item.title}>
-                <div className="contact-icon">{item.icon}</div>
 
-                <div className="contact-item-content">
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </div>
+          {/* Left Side */}
+          <div className="contact-information">
+
+            <div className="contact-info-item">
+              <div className="contact-info-icon">📍</div>
+              <div>
+                <h3>Our Location</h3>
+                {/* <p>
+                  2/541 C, Ambal Nagar, Malumichampatti,
+                  <br />
+                  Coimbatore, Tamil Nadu, India - 641 050
+                </p> */}
               </div>
-            ))}
+            </div>
+
+            <div className="contact-info-item">
+              <div className="contact-info-icon">📞</div>
+              <div>
+                <h3>Call Us</h3>
+                <p>
+                  {/* <a href="tel:+919444828105">+91 94448 28105</a> */}
+                </p>
+              </div>
+            </div>
+
+            <div className="contact-info-item">
+              <div className="contact-info-icon">✉</div>
+              <div>
+                <h3>Email Us</h3>
+                <p>
+                  {/* <a href="mailto:geniuskidsscl@gmail.com">
+                    geniuskidsscl@gmail.com
+                  </a> */}
+                </p>
+              </div>
+            </div>
+
+            <div className="contact-info-item">
+              <div className="contact-info-icon">◷</div>
+              <div>
+                <h3>Working Hours</h3>
+                <p>Monday - Friday: 8:00 AM - 4:30 PM</p>
+              </div>
+            </div>
+
           </div>
 
-        
+          {/* Right Side Form */}
           <form className="contact-form" onSubmit={handleSubmit}>
+
             <input
               type="text"
               name="name"
               placeholder="Your Name"
-              aria-label="Your Name"
+              autoComplete="name"
               required
             />
 
@@ -88,7 +99,7 @@ function Contact() {
               type="email"
               name="email"
               placeholder="Your Email"
-              aria-label="Your Email"
+              autoComplete="email"
               required
             />
 
@@ -96,7 +107,7 @@ function Contact() {
               type="tel"
               name="phone"
               placeholder="Your Phone"
-              aria-label="Your Phone"
+              autoComplete="tel"
               pattern="[0-9+\s()-]{7,20}"
               title="Enter a valid phone number"
               required
@@ -105,30 +116,38 @@ function Contact() {
             <textarea
               name="message"
               placeholder="Your Message"
-              aria-label="Your Message"
-              rows="5"
+              rows="6"
               required
             ></textarea>
 
             <button type="submit" className="contact-submit">
-              Send Message
+              Send Message <span>→</span>
             </button>
+
           </form>
+
         </div>
 
+        {/* Google Map */}
+        <div className="contact-map-heading">
+          <h2>Find Our <span>School</span></h2>
+          <div className="contact-heading-line"></div>
+        </div>
 
         <div className="contact-map">
           <iframe
-            title="Genius Kids International School Location"
-            src="https://maps.google.com/maps?q=Genius%20Kids%20International%20School%2C%20Malumichampatti%2C%20Coimbatore&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            title="Euro Kids Pre-School Location"
+            src="https://maps.google.com/maps?q=2%2F541%20C%2C%20Ambal%20Nagar%2C%20Malumichampatti%2C%20Coimbatore%2C%20Tamil%20Nadu%20641050&t=&z=14&ie=UTF8&iwloc=&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
           ></iframe>
         </div>
+
       </div>
     </section>
   );
 }
 
 export default Contact;
+

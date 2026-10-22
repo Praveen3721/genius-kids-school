@@ -1,240 +1,213 @@
-/* =========================
-   NAVBAR
-========================= */
-
+/* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
-  background: #fffaf5;
-  border-bottom: 1px solid #eee5dc;
+  background: #fffdf8;
+  border-bottom: 1px solid #f1ece5;
+  box-sizing: border-box;
 }
 
+/* MAIN CONTAINER */
 .navbar-container {
-  width: 77%;
-  max-width: 1300px;
-  min-height: 84px;
+  width: 88%;
+  max-width: 1400px;
+  min-height: 90px;
   margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 30px;
 }
 
-/* =========================
-   LOGO
-========================= */
-
+/* LOGO */
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
-  color: #354d82;
-  text-decoration: none;
   flex-shrink: 0;
+  text-decoration: none;
+  margin-right: 20px;s
 }
 
 .navbar-logo img {
-  width: 54px;
-  height: 54px;
+  display: block;
+  width: 215px;
+  height: 95px;
   object-fit: contain;
 }
 
-.navbar-logo-text h2 {
-  margin: 0 0 5px;
-  font-size: 22px;
-  font-weight: 700;
+/* RIGHT SIDE */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 55px;
 }
 
-.navbar-logo-text span {
-  font-size: 11px;
-  letter-spacing: 1.2px;
-  color: #77716c;
-}
-
-/* =========================
-   DESKTOP NAVIGATION
-========================= */
-
+/* NAVIGATION LINKS */
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 38px;
 }
 
 .nav-link {
   position: relative;
   display: inline-block;
-  padding: 10px 0;
-  color: #454545;
+  padding: 12px 0;
+
+  color: #243752;
   font-family: "Poppins", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   font-style: italic;
   text-decoration: none;
+  white-space: nowrap;
+
   transition: color 0.3s ease;
 }
 
+/* PINK UNDERLINE */
 .nav-link::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
+
   width: 0;
-  height: 2px;
-  background: #e78caf;
+  height: 3px;
+  border-radius: 5px;
+  background: #f5225b;
+
   transition: width 0.3s ease;
 }
 
+.nav-link:hover,
 .nav-link.active {
-  color: #c25780;
+  color: #f5225b;
 }
 
+.nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
 }
 
-.nav-link:hover {
-  color: #c25780;
-}
 
-/* =========================
-   HAMBURGER BUTTON
-========================= */
+
 
 .navbar-toggle {
   display: none;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+
   border: none;
   background: transparent;
-  padding: 5px;
   cursor: pointer;
-  flex-shrink: 0;
 }
 
 .navbar-toggle span {
   display: block;
-  width: 35px;
-  height: 5px;
-  margin: 6px 0;
-  background: #354d82;
+  width: 26px;
+  height: 3px;
+  margin: 5px auto;
+
   border-radius: 5px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  background: #173f86;
+
+  transition: 0.3s ease;
 }
 
-/* Hamburger transforms into X */
-
-.navbar-toggle.open span:first-child {
-  transform: translateY(11px) rotate(45deg);
+.navbar-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
 }
 
 .navbar-toggle.open span:nth-child(2) {
   opacity: 0;
 }
 
-.navbar-toggle.open span:last-child {
-  transform: translateY(-11px) rotate(-45deg);
+.navbar-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 1024px) {
+/* TABLET */
+@media (max-width: 1100px) {
   .navbar-container {
-    width: 90%;
-  }
-
-  .navbar-links {
-    gap: 18px;
-  }
-
-  .navbar-logo-text h2 {
-    font-size: 19px;
-  }
-
-  .navbar-logo-text span {
-    font-size: 9px;
-  }
-}
-
-/* =========================
-   MOBILE NAVIGATION
-========================= */
-
-@media (max-width: 700px) {
-  .navbar {
-    position: sticky;
-    top: 0;
-  }
-
-  .navbar-container {
-    position: relative;
-    width: 100%;
-    min-height: 105px;
-    padding: 12px 22px;
-    box-sizing: border-box;
-
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  /* Logo on the left */
-
-  .navbar-logo {
-    gap: 12px;
-    min-width: 0;
+    width: 94%;
+    min-height: 90px;
   }
 
   .navbar-logo img {
-    width: 65px;
-    height: 65px;
+    width: 165px;
+    height: 75px;
   }
 
-  .navbar-logo-text h2 {
-    font-size: clamp(20px, 5vw, 27px);
-    margin: 0;
-    white-space: nowrap;
+  .navbar-right {
+    gap: 25px;
   }
 
-  /* Hide school subtitle on mobile */
-
-  .navbar-logo-text span {
-    display: none;
+  .navbar-links {
+    gap: 20px;
   }
 
-  /* Show hamburger on the right */
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .navbar-enroll {
+    min-width: auto;
+    padding: 14px 22px;
+    font-size: 13px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 760px) {
+  .navbar-container {
+    width: 92%;
+    min-height: 82px;
+    gap: 12px;
+  }
+
+  .navbar-logo img {
+    width: 145px;
+    height: 68px;
+  }
 
   .navbar-toggle {
     display: block;
+    flex-shrink: 0;
   }
 
-  /* Dropdown menu */
-
-  .navbar-links {
+  .navbar-right {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
 
-    padding: 12px 24px 20px;
+    width: 100%;
+    padding: 22px 6% 26px;
     box-sizing: border-box;
 
     flex-direction: column;
     align-items: stretch;
-    gap: 4px;
+    gap: 20px;
 
-    background: #fffaf5;
-    border-top: 1px solid #eee5dc;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    background: #fffdf8;
+    border-top: 1px solid #f1ece5;
+    box-shadow: 0 12px 20px rgba(30, 48, 75, 0.08);
   }
 
-  /* Show when hamburger is clicked */
-
-  .navbar-links.show {
+  .navbar-right.show {
     display: flex;
+  }
+
+  .navbar-links {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
   }
 
   .nav-link {
@@ -242,40 +215,28 @@
     width: fit-content;
     padding: 12px 0;
     font-size: 15px;
-    font-style: normal;
   }
 
   .nav-link::after {
-    bottom: 4px;
+    height: 2px;
   }
+
+  
 }
 
-/* =========================
-   SMALL MOBILE
-========================= */
-
+/* SMALL MOBILE */
 @media (max-width: 380px) {
   .navbar-container {
-    min-height: 88px;
-    padding: 10px 14px;
-  }
-
-  .navbar-logo {
-    gap: 8px;
+    min-height: 72px;
   }
 
   .navbar-logo img {
-    width: 52px;
-    height: 52px;
+    width: 125px;
+    height: 60px;
   }
 
-  .navbar-logo-text h2 {
-    font-size: 19px;
-  }
-
-  .navbar-toggle span {
-    width: 30px;
-    height: 5px;
-    margin: 5px 0;
+  .navbar-toggle {
+    width: 38px;
+    height: 38px;
   }
 }

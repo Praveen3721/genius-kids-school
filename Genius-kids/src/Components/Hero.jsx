@@ -1,39 +1,62 @@
 import "./Hero.css";
 
 function Hero() {
-  return (
-    <section className="hero" id="home">
+  const handleEnroll = () => {
+    const contactSection = document.getElementById("contact");
 
-     
+    if (contactSection) {
+      const navbarHeight =
+        document.querySelector(".navbar")?.offsetHeight || 0;
+
+      const sectionTop =
+        contactSection.getBoundingClientRect().top + window.scrollY;
+
+      window.scrollTo({
+        top: Math.max(0, sectionTop - navbarHeight),
+        behavior: "smooth",
+      });
+
+      window.history.replaceState(null, "", "#contact");
+    }
+  };
+
+  return (
+    <section className="hero-section" id="home">
+      {/* Background overlay */}
       <div className="hero-overlay"></div>
 
-    
+      {/* Hero content */}
       <div className="hero-container">
         <div className="hero-content">
-
           <p className="hero-subtitle">
-            GENIUS KIDS INTERNATIONAL SCHOOL
+            WELCOME TO EURO KIDS PRE-SCHOOL
           </p>
 
           <h1>
-            Nurturing Young
+            Little Steps,
             <br />
-            Minds for a
-            <br />
-            Bright Future
+            <span>Big Dreams!</span>
           </h1>
 
           <p className="hero-description">
-            Where learning is fun and every child is a genius
+            A joyful place where little minds explore,
+            discover, and grow into confident learners.
+            Every little step today builds a brighter
+            tomorrow.
           </p>
 
-          <a href="#contact" className="hero-button">
-            Enroll Now
-          </a>
+          <button
+            type="button"
+            className="hero-enroll-btn"
+            onClick={handleEnroll}
+          >
+            <span>Enroll Now</span>
+            <span className="hero-arrow">→</span>
+          </button>
 
+          
         </div>
       </div>
-
     </section>
   );
 }

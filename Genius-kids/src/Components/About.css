@@ -1,361 +1,555 @@
-/* ============================
-   ABOUT SECTION
-============================ */
+/* ======================================
+   EURO KIDS ABOUT SECTION
+====================================== */
 
 .about-section {
   width: 100%;
-  padding: 80px 7%;
+  padding: 65px 0 85px;
   background: #fffaf5;
   overflow: hidden;
-  scroll-margin-top: 85px;
 }
 
-/* HEADING */
+/* ======================================
+   ABOUT HEADER
+====================================== */
 
-.about-heading {
+.about-header {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto 65px;
   text-align: center;
-  margin-bottom: 55px;
 }
 
 .about-subtitle {
-  color: #d94f83;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
+  margin: 0 0 14px;
+  color: #ed3c75;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
 }
 
-.about-heading h1 {
-  color: #344b82;
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 700;
+.about-header h1 {
+  margin: 0;
+  color: #174d9b;
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 800;
   line-height: 1.2;
 }
 
-.about-heading h1 span {
-  color: #d94f83;
+.about-header h1 span {
+  color: #e94f87;
 }
 
-.about-heading-line {
-  width: 65px;
+.about-title-line {
+  width: 70px;
   height: 4px;
-  background: #e58bb0;
-  border-radius: 5px;
-  margin: 18px auto;
+  margin: 22px auto;
+  background: #e94f87;
+  border-radius: 10px;
 }
 
-.about-intro {
-  color: #777;
+.about-header-description {
+  margin: 0;
+  color: #687387;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
-/* CONTENT CONTAINER */
+/* ======================================
+   MAIN CONTENT LAYOUT
+====================================== */
 
 .about-container {
-  width: 100%;
-  max-width: 1250px;
-  margin: 0 auto 65px;
+  width: 84%;
+  max-width: 1350px;
+  margin: 0 auto;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 55px;
+  gap: 65px;
 }
 
-/* ABOUT TEXT */
+/* ======================================
+   LEFT CONTENT
+====================================== */
+
+.about-content {
+  min-width: 0;
+}
+
+.about-small-label {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #e94f87;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.7;
+}
 
 .about-content h2 {
-  color: #344b82;
-  font-size: clamp(25px, 3vw, 34px);
-  margin-bottom: 22px;
+  margin: 0 0 25px;
+  color: #174d9b;
+  font-size: clamp(30px, 3.2vw, 42px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.about-content h2 span {
+  color: #e94f87;
 }
 
 .about-content p {
-  color: #555b68;
-  font-size: 16px;
-  line-height: 1.9;
-  margin-bottom: 18px;
+  margin: 0 0 20px;
+  color: #536071;
+  font-size: 15px;
+  line-height: 2;
 }
 
-/* BUTTON */
+/* ======================================
+   EXPLORE BUTTON
+====================================== */
 
-.about-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 14px 25px;
+.about-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
 
-  background: #d94f83;
-  color: white;
+  margin-top: 12px;
+  padding: 15px 25px;
 
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 14px;
+  border: none;
+  border-radius: 50px;
+
+  background: linear-gradient(
+    135deg,
+    #ed4c86,
+    #d93f79
+  );
+
+  color: #ffffff;
+  font-size: 15px;
   font-weight: 700;
 
-  transition: 0.3s;
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(217, 63, 121, 0.15);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.about-button:hover {
-  background: #b9386a;
-  transform: translateY(-2px);
+.about-explore-btn span {
+  font-size: 20px;
+  transition: transform 0.25s ease;
 }
 
-/* IMAGE */
+.about-explore-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(217, 63, 121, 0.24);
+}
+
+.about-explore-btn:hover span {
+  transform: translateX(4px);
+}
+
+/* ======================================
+   RIGHT IMAGE
+====================================== */
+
+.about-image-wrapper {
+  position: relative;
+  min-width: 0;
+  padding: 0 0 25px 0;
+}
 
 .about-image {
-  width: 100%;
-  height: 400px;
-
-  overflow: hidden;
-  border-radius: 25px;
-
-  background: #f8eaf0;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-}
-
-.about-image img {
-  width: 100%;
-  height: 100%;
-
   display: block;
+  width: 100%;
+  height: 430px;
+
   object-fit: cover;
   object-position: center;
+
+  border-radius: 28px;
+
+  box-shadow: 0 20px 45px rgba(38, 63, 128, 0.12);
 }
 
-/* ============================
-   MISSION AND VISION
-============================ */
+/* Image Badge */
 
-.mission-vision {
-  width: 100%;
-  max-width: 1250px;
-  margin: 0 auto;
+.about-image-badge {
+  position: absolute;
+  left: -25px;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  max-width: calc(100% - 10px);
+  padding: 15px 22px;
+
+  background: #ffffff;
+  border: 1px solid #f5dce6;
+  border-radius: 18px;
+
+  box-shadow: 0 12px 30px rgba(38, 63, 128, 0.10);
+}
+
+.about-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+
+  background: #ffe2ec;
+  border-radius: 50%;
+
+  color: #e94f87;
+  font-size: 28px;
+}
+
+.about-image-badge strong {
+  display: block;
+  color: #174d9b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.about-image-badge p {
+  margin: 4px 0 0;
+  color: #7c8797;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Decorations */
+
+.about-decoration {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-decoration-one {
+  top: -24px;
+  right: 20px;
+  color: #ffbd24;
+  font-size: 45px;
+}
+
+.about-decoration-two {
+  top: 35%;
+  left: -20px;
+  color: #ed4c86;
+  font-size: 30px;
+}
+
+/* ======================================
+   MISSION AND VISION
+====================================== */
+
+.about-values {
+  width: 84%;
+  max-width: 1350px;
+  margin: 85px auto 0;
 
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
 }
 
-.mission-card,
-.vision-card {
-  padding: 35px;
-  min-height: 260px;
+.about-value-card {
+  padding: 38px;
+  border: 1px solid #e9e4dc;
+  border-radius: 25px;
 
-  border-radius: 22px;
-  border: 1px solid #e8e2d8;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
+
+.about-value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(38, 63, 128, 0.08);
+}
+
+/* Mission */
 
 .mission-card {
   background: #f0f7e9;
 }
 
+/* Vision */
+
 .vision-card {
   background: #eaf1ff;
 }
 
-/* ICON */
+/* Value Icon */
 
-.about-card-icon {
-  width: 58px;
-  height: 58px;
-
+.about-value-icon {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: white;
-  border-radius: 18px;
+  width: 65px;
+  height: 65px;
+  margin-bottom: 23px;
 
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.mission-card h2,
-.vision-card h2 {
-  color: #344b82;
-  font-size: 25px;
-  margin-bottom: 15px;
-}
-
-.mission-card p,
-.vision-card p {
-  color: #626262;
-  font-size: 15px;
-  line-height: 1.9;
-}
-
-/* ============================
-   AWARD BANNER
-============================ */
-
-.about-award {
-  width: 100%;
-  max-width: 1100px;
-
-  margin: 60px auto 0;
-  padding: 28px 32px;
-
-  display: flex;
-  align-items: center;
-  gap: 22px;
-
-  background: #fff0f5;
-  border: 1px solid #f7cddd;
+  background: #ffffff;
   border-radius: 20px;
-}
-
-.about-award-icon {
-  width: 60px;
-  height: 60px;
-  min-width: 60px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: white;
-  border-radius: 18px;
 
   font-size: 30px;
 }
 
-.about-award h3 {
-  color: #344b82;
-  font-size: 21px;
-  margin-bottom: 8px;
+.about-value-card h3 {
+  margin: 0 0 15px;
+  color: #174d9b;
+  font-size: 25px;
+  font-weight: 800;
 }
 
-.about-award p {
-  color: #555;
+.about-value-card p {
+  margin: 0;
+  color: #536071;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* ======================================
+   COMMITMENT CARD
+====================================== */
+
+.about-commitment {
+  width: 78%;
+  max-width: 1200px;
+  margin: 55px auto 0;
+  padding: 28px 35px;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  background: #fff0f5;
+  border: 1px solid #f7cbdc;
+  border-radius: 24px;
+}
+
+.commitment-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+
+  background: #ffffff;
+  border-radius: 20px;
+
+  font-size: 30px;
+}
+
+.commitment-content h3 {
+  margin: 0 0 10px;
+  color: #174d9b;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.commitment-content p {
+  margin: 0;
+  color: #536071;
   font-size: 15px;
   line-height: 1.8;
 }
 
-/* ============================
-   TABLET
-============================ */
+/* ======================================
+   TABLET RESPONSIVE
+====================================== */
 
-@media (max-width: 900px) {
-  .about-section {
-    padding: 65px 5%;
-  }
-
+@media (max-width: 1024px) {
   .about-container {
-    gap: 30px;
+    width: 88%;
+    gap: 35px;
   }
 
   .about-image {
-    height: 330px;
+    height: 360px;
   }
 
-  .mission-vision {
+  .about-values {
+    width: 88%;
     gap: 20px;
   }
 
-  .mission-card,
-  .vision-card {
-    padding: 25px;
+  .about-value-card {
+    padding: 28px;
+  }
+
+  .about-commitment {
+    width: 84%;
   }
 }
 
-/* ============================
-   MOBILE
-============================ */
+/* ======================================
+   MOBILE RESPONSIVE
+====================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .about-section {
-    padding: 45px 18px;
+    padding: 50px 0 60px;
   }
 
-  .about-heading {
-    margin-bottom: 35px;
+  .about-header {
+    width: 88%;
+    margin-bottom: 40px;
   }
 
-  .about-intro {
+  .about-subtitle {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .about-header h1 {
+    font-size: 36px;
+  }
+
+  .about-header-description {
     font-size: 14px;
   }
 
   .about-container {
+    width: 88%;
     grid-template-columns: 1fr;
-    gap: 28px;
-    margin-bottom: 40px;
+    gap: 35px;
   }
 
   .about-content h2 {
-    font-size: 27px;
+    font-size: 32px;
   }
 
   .about-content p {
     font-size: 14px;
-    line-height: 1.8;
+    line-height: 1.9;
+  }
+
+  .about-image-wrapper {
+    margin: 5px 0 15px;
   }
 
   .about-image {
-    height: 270px;
-    border-radius: 18px;
+    height: 330px;
+    border-radius: 22px;
   }
 
-  .mission-vision {
+  .about-image-badge {
+    left: 12px;
+    padding: 12px 15px;
+  }
+
+  .about-values {
+    width: 88%;
+    margin-top: 55px;
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 20px;
   }
 
-  .mission-card,
-  .vision-card {
-    min-height: auto;
-    padding: 25px;
+  .about-value-card {
+    padding: 28px;
+    border-radius: 22px;
   }
 
-  .mission-card h2,
-  .vision-card h2 {
+  .about-value-card h3 {
     font-size: 23px;
   }
 
-  .mission-card p,
-  .vision-card p {
+  .about-value-card p {
     font-size: 14px;
   }
 
-  .about-award {
-    margin-top: 35px;
-    padding: 20px;
-    gap: 14px;
+  .about-commitment {
+    width: 88%;
+    margin-top: 30px;
+    padding: 24px;
+    gap: 17px;
     align-items: flex-start;
   }
 
-  .about-award-icon {
-    width: 45px;
-    height: 45px;
-    min-width: 45px;
-    font-size: 23px;
+  .commitment-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
   }
 
-  .about-award h3 {
-    font-size: 17px;
+  .commitment-content h3 {
+    font-size: 19px;
   }
 
-  .about-award p {
-    font-size: 13px;
+  .commitment-content p {
+    font-size: 14px;
   }
 }
 
-/* SMALL MOBILE */
+/* ======================================
+   SMALL MOBILE
+====================================== */
 
-@media (max-width: 380px) {
-  .about-section {
-    padding: 40px 15px;
+@media (max-width: 420px) {
+  .about-header h1 {
+    font-size: 31px;
   }
 
-  .about-heading h1 {
-    font-size: 29px;
+  .about-content h2 {
+    font-size: 28px;
+  }
+
+  .about-small-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
   }
 
   .about-image {
-    height: 230px;
+    height: 260px;
   }
 
-  .about-award {
-    padding: 15px;
+  .about-image-badge {
+    left: 5px;
+    gap: 9px;
+    padding: 10px;
+  }
+
+  .about-badge-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 23px;
+  }
+
+  .about-image-badge strong {
+    font-size: 12px;
+  }
+
+  .about-image-badge p {
+    font-size: 10px;
+  }
+
+  .about-value-card {
+    padding: 23px;
+  }
+
+  .about-commitment {
+    padding: 18px;
+  }
+
+  .commitment-content h3 {
+    font-size: 17px;
   }
 }
